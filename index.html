@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shelf — Book Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">Book Finder</div>
+      <div class="view-buttons" role="tablist" aria-label="Views">
+        <button type="button" data-view="search" class="tab-button active" aria-selected="true">Search</button>
+        <button type="button" data-view="list" class="tab-button" aria-selected="false">My List</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="search-view" class="view">
+        <form id="search-form" class="search-form">
+          <label for="search-input" class="sr-only">Search books or authors</label>
+          <input id="search-input" name="query" type="search" placeholder="Search books or authors" autocomplete="off" required>
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="suggestions">
+          <p class="suggestions-title">Popular suggestions</p>
+          <div id="suggestion-chips" class="suggestion-chips"></div>
+        </div>
+
+        <div id="search-feedback" class="feedback" aria-live="polite"></div>
+        <div id="search-results" class="cards-grid"></div>
+      </section>
+
+      <section id="list-view" class="view hidden">
+        <div id="list-feedback" class="feedback" aria-live="polite"></div>
+        <div id="reading-list" class="cards-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
